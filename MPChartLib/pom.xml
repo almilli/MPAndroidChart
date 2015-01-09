@@ -17,7 +17,7 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-	<version>1.4.2-SNAPSHOT</version>
+	<version>1.4.2_001</version>
     <groupId>com.github.mikephil</groupId>
     <artifactId>MPAndroidChart</artifactId>
     <name>MPAndroidChart</name>
@@ -29,6 +29,58 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+	<distributionManagement>
+		<repository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>sb-releases</id>
+			<name>Second Breakfast Studios Repository</name>
+			<url>file://///hoth/maven/releases/</url>
+			<layout>default</layout>
+		</repository>
+		<snapshotRepository>
+			<uniqueVersion>true</uniqueVersion>
+			<id>sb-snapshots</id>
+			<name>Second Breakfast Studios Snapshots</name>
+			<url>file://///hoth/maven/snapshots/</url>
+			<layout>default</layout>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<repositories>
+		<repository>
+			<releases>
+				<enabled>false</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</snapshots>
+			<id>sb-snapshots</id>
+			<name>Second Breakfast Studios Snapshots Repository</name>
+			<url>file://///hoth/maven/snapshots/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>never</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</snapshots>
+			<id>sb-releases</id>
+			<name>Second Breakfast Studios Releases Repository</name>
+			<url>file://///hoth/maven/releases/</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
 
     <build>
     	<sourceDirectory>src</sourceDirectory>
